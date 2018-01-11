@@ -45,7 +45,7 @@ if($response) : ?>
     <div class="primary-container">
       <h1 style="color:black;width: 100%; text-align: center;">Perfect Selfie Calculator</h1>
       <br>
-      <h3 style="color:black;width: 100%; text-align: center;">Your picture has been posted on Facebook.</h3>
+      <h3 style="color:black;width: 100%; text-align: center;">Your selfie has been posted on Facebook.</h3>
       <br>
       <h3 style="color:black;width: 100%; text-align: center;">Window will close in 5 seconds.</h3>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

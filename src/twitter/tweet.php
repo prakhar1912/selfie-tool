@@ -28,7 +28,6 @@ try {
     $result = $connection->post('statuses/update', $parameters);
 } catch(TwitterOAuth\TwitterOAuthException $e) {
   $error = 'An error occured while uploading image: ' . $e->getMessage();
-  exit;
 }
 
 if($result->errors || $error): ?>

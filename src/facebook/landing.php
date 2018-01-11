@@ -19,10 +19,8 @@ try {
   $accessToken = $helper->getAccessToken();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   $error =  'Graph returned an error: ' . $e->getMessage();
-  exit;
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
   $error = 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
 }
 
 if (! isset($accessToken)) {
@@ -48,12 +46,40 @@ if (! $accessToken->isLongLived()) {
     $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
   } catch (Facebook\Exceptions\FacebookSDKException $e) {
     $error = "Error getting long-lived access token: " . $helper->getMessage();
-    exit;
   }
 }
 
 $_SESSION['fb_access_token'] = (string) $accessToken;
+if($error) :
 ?>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="/wp-content/plugins/selfie-tool/src/styles.css">
+    </head>
+    <body>
+    <div class="primary-container">
+      <h1 style="color:black;width: 100%; text-align: center;">Perfect Selfie Calculator</h1>
+      <br>
+      <h3 style="color:black;width: 100%; text-align: center;">Some errors occured while posting to Twitter. Error: <?= $error ?></h3>
+      <br>
+          <h3 style="color:black;width: 100%; text-align: center;">Window will close in 5 seconds.</h3>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="/wp-content/plugins/selfie-tool/src/script.js"></script>
+        <script>
+          setTimeout(function(){
+            window.close();
+          },5000);
+        </script>
+    </div>
+    </body>
+</html>
+<?php else: ?>
 <!doctype html>
 <html>
     <head>
@@ -65,8 +91,15 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
         <link rel="stylesheet" href="/wp-content/plugins/selfie-tool/src/styles.css">
         <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
         <style>
-          .caption{
+          .form textarea{
             padding: 20px;
+          }
+          .primary-container{
+            background-color: #e9ebee;
+          }
+          .form button, .form button:visited, .form button:hover,.form button:active ,.form button:focus,.form button:active:focus{
+            background-color: #4267b2;
+            border-color: #4267b2;
           }
         </style>
     </head>
@@ -77,9 +110,8 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
       <h3 style="color:black;width: 100%; text-align: center;">Post to Facebook</h3>
       <br>
       <form method="POST" action="post.php" class="form">
-          <p>Caption:</p>
-          <br>
-          <textarea name="message" class="form-control caption"></textarea>
+          <h4>Caption:</h4>
+          <textarea name="message" class="form-control"></textarea>
           <br>
           <img src="/wp-content/plugins/selfie-tool/images/<?= $_SESSION['target_file'] ?>" id="preview"/>
           <br>
@@ -103,3 +135,4 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
     </div>
     </body>
 </html>
+<?php endif ?>

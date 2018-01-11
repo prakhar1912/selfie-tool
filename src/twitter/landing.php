@@ -19,10 +19,18 @@ if($submit){
             <link rel="stylesheet" href="/wp-content/plugins/selfie-tool/src/styles.css">
             <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
             <style>
-              .tweet{
-                height: 200px;
-                padding: 20px;
-              }
+                .primary-container{
+                    background-color: #1DA1F2;
+                    background: rgba(29,161,242,0.1);
+                }
+                .tweet textarea{
+                    padding: 20px;
+                    border: 1px solid #A4D9F9;
+                }
+                .tweet button, .tweet button:visited, .tweet button:hover,.tweet button:active ,.tweet button:focus,.tweet button:active:focus{
+                    background-color: #1da1f2;
+                    color: #fff;
+                }
             </style>
         </head>
         <body>
@@ -31,10 +39,9 @@ if($submit){
                 <br>
                 <h3 style="color:black;width: 100%; text-align: center;">Compose Tweet</h3>
                 <br>
-                <form method="POST" action="landing.php" class="form">
-                    <p>Tweet:</p>
-                    </br>
-                    <textarea name="status" class="form-control tweet"></textarea>
+                <form method="POST" action="landing.php" class="form tweet">
+                    <h4>Tweet:</h4>
+                    <textarea name="status" class="form-control"></textarea>
                     <br>
                     <img src="/wp-content/plugins/selfie-tool/images/<?= $_SESSION['target_file'] ?>" id="preview"/>
                     <br>
