@@ -5,9 +5,11 @@ require '../vendor/autoload.php';
 
 use Facebook\Facebook;
 
+$api = (array)json_decode((string) file_get_contents('api.json'));
+
 $fb = new Facebook([
-  'app_id' => '2271843309508393',
-  'app_secret' => 'e9267388b7dab5d4ccc6d03d667ed185',
+  'app_id' => $api['api_id'],
+  'app_secret' => $api['api_secret'],
   'default_graph_version' => 'v2.2',
 ]);
 

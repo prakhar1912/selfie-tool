@@ -5,9 +5,11 @@ require '../vendor/autoload.php';
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-define('CONSUMER_KEY', 'Ccy5HrmAd5I4jnywiWL7Ec2x0');
-define('CONSUMER_SECRET', 'daOxvGDdcBZKfWleUCtTpp8IPI8wN7hypAD1ehXZIrjHQfilLn');
-define('OAUTH_CALLBACK', 'http://localhost:8000/wp-content/plugins/selfie-tool/src/twitter/landing.php');
+$api = (array)json_decode((string) file_get_contents('api.json'));
+
+define('CONSUMER_KEY', $api['consumer_key']);
+define('CONSUMER_SECRET', $api['consumer_secret']);
+define('OAUTH_CALLBACK', $api['oauth_callback']);
 
 $request = $_GET['request'];
 
