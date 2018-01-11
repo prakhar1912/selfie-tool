@@ -1,0 +1,7 @@
+{
+    "require": {
+        "facebook/graph-sdk": "^5.6",
+        "guzzlehttp/guzzle": "5.*",
+        "abraham/twitteroauth": "*"
+    }
+}

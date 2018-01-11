@@ -1,0 +1,124 @@
+*{
+	font-family: 'Lato',serif,Helvetica;
+	color:black;
+}
+html,body{
+	width: 100%;
+	background-color: #F5F7F9;
+}
+.clearfix:after{
+	content: '';
+	display: table;
+	clear: both;
+}
+.primary-container{
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #F5F7F9;
+}
+.btn-primary, .btn-primary:visited, .btn-primary:hover,.btn-primary:active ,.btn-primary:focus,.btn-primary:active:focus{
+	background-color: #3fc6ee;
+	font-size: 1.5em;
+	color:white;
+	font-weight: bold;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+}
+img#preview{
+	display: block;
+	max-width: 100%;
+	max-height: 250px;
+	margin: 0 auto;
+	border: 5px solid #fff;
+	border-radius: 5px;
+}
+.criteria-container{
+	width: 100%;
+	overflow: hidden;
+}
+.criteria{
+	width: 999999px;
+	position: relative;
+}
+.slide{
+	float: left;
+	position: relative;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	padding: 10px;
+}
+.option{
+	margin-bottom: 10px;
+	position: relative;
+}
+.option input[type="radio"]{
+	display: none;
+}
+.option .checkbox{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 1em;
+	width: 1em;
+	border: 2px solid #3fc6ee;
+	border-radius: 3px;
+	margin: 0;
+}
+.option .filled{
+	background-color: #3fc6ee;
+}
+.option .checkbox:hover{
+	cursor: pointer;
+}
+.slide h3{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+#social{
+	margin: 0 auto;
+	text-align: center;
+	display: none;
+}
+#social .share{
+	width: 20%;
+	display: inline-block;
+	margin: 10px;
+	text-align: center;
+}
+#social .share .icon{
+	display: block;
+	margin: 0 auto;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	background-position: center center;
+    background-size: cover;
+}
+#social .share p{
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 0.75em;
+}
+.progress-bar{
+	margin-top: 10px;
+	width: 100%;
+	height: 10px;
+	background-color: #d5d9dc;
+	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.progress{
+	position: absolute;
+	width: 0;
+	height: 10px;
+	background-color: #3fc6ee;
+	border-radius: 5px;
+	transition: width 1s;
+}
