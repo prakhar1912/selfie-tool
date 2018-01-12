@@ -25,10 +25,8 @@ try {
   $response = $fb->post('/me/photos', $data, $_SESSION['fb_access_token']);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   $error = 'Graph returned an error: ' . $e->getMessage();
-  exit;
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
   $error = 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
 }
 if($response) : ?>
 <!doctype html>

@@ -4,8 +4,10 @@ require '../vendor/autoload.php';
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-define('CONSUMER_KEY', 'Ccy5HrmAd5I4jnywiWL7Ec2x0');
-define('CONSUMER_SECRET', 'daOxvGDdcBZKfWleUCtTpp8IPI8wN7hypAD1ehXZIrjHQfilLn');
+$api = (array)json_decode((string) file_get_contents('api.json'));
+
+define('CONSUMER_KEY', $api['consumer_key']);
+define('CONSUMER_SECRET', $api['consumer_secret']);
 
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $access_token = $connection->oauth("oauth/access_token", ["oauth_verifier" => $_SESSION['oauth_verifier']]);

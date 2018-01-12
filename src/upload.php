@@ -52,7 +52,7 @@ if ($uploadOk == 0) {
 			  				<input type="radio" name="headtilt" value="crh">&nbsp;<span>Chin Raised High</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
-			  				<input type="radio" name="headtilt" value="lh">&nbsp;<span>Level Height</span><span class="checkbox"></span>
+			  				<input type="radio" name="headtilt" value="lh">&nbsp;<span>Chin Level Height</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
 			  				<input type="radio" name="headtilt" value="ctu">&nbsp;<span>Chin Tucked Under</span><span class="checkbox"></span>
@@ -76,10 +76,10 @@ if ($uploadOk == 0) {
 			  			<h3>Lighting</h3>
 			  			<br>
 			  			<div class="option">
-			  				<input type="radio" name="lighting" value="g">&nbsp;<span>Good but not overly bright</span><span class="checkbox"></span>
+			  				<input type="radio" name="lighting" value="d">&nbsp;<span>Low lighting</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
-			  				<input type="radio" name="lighting" value="d">&nbsp;<span>Dark lighting</span><span class="checkbox"></span>
+			  				<input type="radio" name="lighting" value="g">&nbsp;<span>Natural lighting</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
 			  				<input type="radio" name="lighting" value="v">&nbsp;<span>Very bright lighting</span><span class="checkbox"></span>
@@ -91,10 +91,10 @@ if ($uploadOk == 0) {
 			  			<h3>Body</h3>
 			  			<br>
 			  			<div class="option">
-			  				<input type="radio" name="body" value="ff">&nbsp;<span>Full face and some body</span><span class="checkbox"></span>
+			  				<input type="radio" name="body" value="ff">&nbsp;<span>Full face and shoulders</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
-			  				<input type="radio" name="body" value="cu">&nbsp;<span>Close up face</span><span class="checkbox"></span>
+			  				<input type="radio" name="body" value="cu">&nbsp;<span>Close up of face</span><span class="checkbox"></span>
 			  			</div>
 			  			<br>
 			  			<button class="btn btn-primary btn-block" id="next">Next</button>
@@ -103,10 +103,10 @@ if ($uploadOk == 0) {
 			  			<h3>Teeth</h3>
 			  			<br>
 			  			<div class="option">
-			  				<input type="radio" name="teeth" value="ws">&nbsp;<span>Wide smile with good display of teeth</span><span class="checkbox"></span>
+			  				<input type="radio" name="teeth" value="ws">&nbsp;<span>Smile with good display of teeth</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
-			  				<input type="radio" name="teeth" value="cm">&nbsp;<span>Closed mouth and no smile</span><span class="checkbox"></span>
+			  				<input type="radio" name="teeth" value="cm">&nbsp;<span>No smile with no teeth shown</span><span class="checkbox"></span>
 			  			</div>
 			  			<br>
 			  			<button class="btn btn-primary btn-block" id="next">Next</button>
@@ -115,19 +115,20 @@ if ($uploadOk == 0) {
 			  			<h3>Angle of Camera</h3>
 			  			<br>
 			  			<div class="option">
-			  				<input type="radio" name="camera" value="lth">&nbsp;<span>Level with top of the head</span><span class="checkbox"></span>
+			  				<input type="radio" name="camera" value="up">&nbsp;<span>Camera at low level pointing upwards</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
-			  				<input type="radio" name="camera" value="up">&nbsp;<span>Low down pointing upwards</span><span class="checkbox"></span>
+			  				<input type="radio" name="camera" value="lth">&nbsp;<span>Camera at eye level</span><span class="checkbox"></span>
 			  			</div>
 			  			<div class="option">
-			  				<input type="radio" name="camera" value="vh">&nbsp;<span>Very high above</span><span class="checkbox"></span>
+			  				<input type="radio" name="camera" value="vh">&nbsp;<span>Camera at high level facing downwards</span><span class="checkbox"></span>
 			  			</div>
 			  			<br>
 			  			<button class="btn btn-primary btn-block" id="next">Finish</button>
 			  		</div>
 			  		<div class="slide">
-			  			<h3>Selfie Score:<span id="score"></span>%</h3>
+			  			<h3>Selfie Score:&nbsp;<span id="score"></span>%</h3>
+			  			<br>
 			  			<div id="social">
 					  		<div class="share">
 					  			<a href="#" id="facebook" target="popup" class="icon" style="background-image: url('facebook.jpg');"></a>
@@ -142,6 +143,7 @@ if ($uploadOk == 0) {
 					  			<p>Share to<br>Twitter</p>
 					  		</div>
 			  			</div>
+			  			<br>
 			  			<a href="/wp-content/plugins/selfie-tool/src/source.html" class="btn btn-primary btn-block">Start Again</a>
 			  		</div>
 			  	</div>

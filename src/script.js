@@ -71,7 +71,7 @@ $(window).ready(function(){
 		$(this).css('pointer-events','none').html('<i class="fa fa-spinner fa-spin" style="color:white;margin-right: 10px"></i>Calculating score');
 		setTimeout(function(){
 			fadeOutLast();
-		},5000);
+		},2500);
 	});
 	$('#choose-file').on('click',function(event){
 		event.preventDefault();

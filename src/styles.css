@@ -29,9 +29,9 @@ html,body{
 img#preview{
 	display: block;
 	max-width: 100%;
-	max-height: 250px;
+	max-height: 320px;
 	margin: 0 auto;
-	border: 5px solid #fff;
+	border: 2px solid #3fc6ee;
 	border-radius: 5px;
 }
 .criteria-container{

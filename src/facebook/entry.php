@@ -19,7 +19,7 @@ if($request == 'fetchURL'){
 	$helper = $fb->getRedirectLoginHelper();
 
 	$permissions = ['email','publish_actions'];
-	$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/selfie-tool/src/facebook/landing.php';
+	$redirect_uri = $api['redirect_uri'];
 	$loginUrl = $helper->getLoginUrl($redirect_uri, $permissions);
 
 	echo htmlspecialchars($loginUrl);

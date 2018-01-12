@@ -28,7 +28,7 @@ class selfie_tool extends WP_Widget{
 			border-top: 5px solid #3fc6ee;
 			overflow: auto;
 			width: 100%;
-			height: 670px;
+			height: 700px;
 			border-radius: 5px;
 		}
 	</style>
